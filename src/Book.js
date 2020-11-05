@@ -1,6 +1,6 @@
 import React from "react";
 
-const Book = ({ book }) => {
+const Book = ({ book, handleShelfChange }) => {
   return (
     <li>
       <div className="book">
@@ -14,7 +14,10 @@ const Book = ({ book }) => {
             }}
           />
           <div className="book-shelf-changer">
-            <select>
+            <select
+              value={book.shelf}
+              onChange={(event) => handleShelfChange(event, book)}
+            >
               <option value="move" disabled>
                 Move to...
               </option>
