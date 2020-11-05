@@ -26,7 +26,9 @@ const Book = ({ book }) => {
           </div>
         </div>
         <div className="book-title">{book.title}</div>
-        <div className="book-authors">{book.authors[0]}</div>
+        <div className="book-authors">
+          {book.authors && book.authors.length > 0 ? book.authors[0] : null}
+        </div>
       </div>
     </li>
   );
