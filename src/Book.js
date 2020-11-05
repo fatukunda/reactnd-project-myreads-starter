@@ -10,7 +10,9 @@ const Book = ({ book, handleShelfChange }) => {
             style={{
               width: 128,
               height: 193,
-              backgroundImage: `url(${book.imageLinks.thumbnail})`,
+              backgroundImage: `url(${
+                book && book.imageLinks && book.imageLinks.thumbnail ? book.imageLinks.thumbnail : ""
+              })`,
             }}
           />
           <div className="book-shelf-changer">
