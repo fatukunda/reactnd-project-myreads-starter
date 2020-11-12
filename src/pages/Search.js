@@ -28,6 +28,7 @@ class Search extends Component {
   };
   render() {
     const { query, searchedBooks } = this.state;
+    const { shelfBooks } = this.props;
     return (
       <div className="search-books">
         <div className="search-books-bar">
@@ -61,6 +62,8 @@ class Search extends Component {
                     handleShelfChange={(event) =>
                       this.handleShelfChange(event, book)
                     }
+                    shelfBooks={shelfBooks}
+                    isSearchedBooks={true}
                   />
                 ))
               : null}
